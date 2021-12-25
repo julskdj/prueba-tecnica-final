@@ -28,7 +28,7 @@ function App() {
                 EstablecerTarea={EstablecerTarea}
                 settareasBusqueda={settareasBusqueda}
                 tareas={tareas}
-                busqueda2={busqueda}
+                
                 tareasBusqueda={tareasBusqueda}
               />
             }
