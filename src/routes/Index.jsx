@@ -10,21 +10,16 @@ const Index = ({
   tareas,
   busqueda,
   tareasBusqueda,
+  cambiarEstado,
 }) => {
   return (
     <>
-      <Navbar
-        
-        setTareas={setTareas}
-        tareasBusqueda={tareasBusqueda}
-      />
-      
+      <Navbar setTareas={setTareas} tareasBusqueda={tareasBusqueda} />
+
       <div className="container">
         <div className="row">
-            <Formulario
-            EstablecerTarea={EstablecerTarea}
-            />
-            <Tareas tareas={tareas}/>
+          <Formulario EstablecerTarea={EstablecerTarea} />
+          <Tareas tareas={tareas} cambiarEstado={cambiarEstado}/>
         </div>
       </div>
     </>

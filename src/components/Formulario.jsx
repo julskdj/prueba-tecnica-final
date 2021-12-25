@@ -18,7 +18,8 @@ const Formulario = ({EstablecerTarea}) => {
         EstablecerTarea({
             titulo,
             descripcion,
-            id: shortid.generate()
+            id: shortid.generate(),
+            completado: false
         });
 
         e.target.reset();

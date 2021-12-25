@@ -16,6 +16,15 @@ function App() {
     console.log(task);
   };
 
+  const cambiarEstado = (id) => {
+    setTareas(tareas.map(tarea => {
+      if(tarea.id === id){
+        tarea.completado = !tarea.completado;
+      }
+      return tarea;
+    }))
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -28,8 +37,8 @@ function App() {
                 EstablecerTarea={EstablecerTarea}
                 settareasBusqueda={settareasBusqueda}
                 tareas={tareas}
-                
                 tareasBusqueda={tareasBusqueda}
+                cambiarEstado={cambiarEstado}
               />
             }
           />
