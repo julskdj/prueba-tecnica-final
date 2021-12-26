@@ -4,13 +4,12 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import Index from "./routes/Index";
-import cambiarEstado from "./functions/cambiarEstado";
-import eliminarTarea from "./functions/eliminarTarea";
+
 
 function App() {
   const [tareas, setTareas] = useState([]);
   const [tareasBusqueda, settareasBusqueda] = useState([]);
-  const [busqueda, setBusqueda] = useState("");
+  const [modoEditando, setModoEditando] = useState(false);
 
   const EstablecerTarea = (task) => {
     setTareas([...tareas, task]);
@@ -35,8 +34,8 @@ function App() {
                 settareasBusqueda={settareasBusqueda}
                 tareas={tareas}
                 tareasBusqueda={tareasBusqueda}
-                cambiarEstado={cambiarEstado}
-                eliminarTarea={eliminarTarea}
+                modoEditando={modoEditando}
+                setModoEditando={setModoEditando}
               />
             }
           />

@@ -1,6 +1,9 @@
 import React from "react";
+import eliminarTarea from "../functions/eliminarTarea.jsx";
+import cambiarEstado from "../functions/cambiarEstado.jsx";
+import editarTarea from "../functions/editarTarea";
 
-const Tareas = ({ tareas, cambiarEstado, setTareas, eliminarTarea, tareasBusqueda, settareasBusqueda}) => {
+const Tareas = ({ tareas, setTareas, tareasBusqueda, settareasBusqueda, setModoEditando}) => {
   return (
     <>
       <div className="col-md-6">
@@ -26,7 +29,7 @@ const Tareas = ({ tareas, cambiarEstado, setTareas, eliminarTarea, tareasBusqued
                   </p>
                   <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
                   <span> </span>
-                  <button className="btn btn-warning">Editar</button>
+                  <button className="btn btn-warning" onClick={e => editarTarea(id, setModoEditando)}>Editar</button>
                   
                 </div>
               </div>
@@ -43,7 +46,7 @@ const Tareas = ({ tareas, cambiarEstado, setTareas, eliminarTarea, tareasBusqued
                   </p>
                     <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
                     <span> </span>
-                    <button className="btn btn-warning">Editar</button>
+                    <button className="btn btn-warning" onClick={e => editarTarea(id, setModoEditando)} >Editar</button>
                     <span> </span>
                     <button className="btn btn-success" onClick={e =>cambiarEstado(id, tareas, setTareas)}>Completar</button>
                 </div>

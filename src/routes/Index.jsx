@@ -8,10 +8,9 @@ const Index = ({
   EstablecerTarea,
   settareasBusqueda,
   tareas,
-  busqueda,
   tareasBusqueda,
-  cambiarEstado,
-  eliminarTarea,
+  modoEditando,
+  setModoEditando,
 }) => {
   return (
     <>
@@ -19,14 +18,17 @@ const Index = ({
 
       <div className="container">
         <div className="row">
-          <Formulario EstablecerTarea={EstablecerTarea} />
+          <Formulario
+            EstablecerTarea={EstablecerTarea}
+            modoEditando={modoEditando}
+            setModoEditando={setModoEditando}
+          />
           <Tareas
             tareas={tareas}
-            cambiarEstado={cambiarEstado}
             setTareas={setTareas}
-            eliminarTarea={eliminarTarea}
             tareasBusqueda={tareasBusqueda}
             settareasBusqueda={settareasBusqueda}
+            setModoEditando={setModoEditando}
           />
         </div>
       </div>
