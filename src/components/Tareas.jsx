@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tareas = ({ tareas, cambiarEstado}) => {
+const Tareas = ({ tareas, cambiarEstado, setTareas, eliminarTarea, tareasBusqueda, settareasBusqueda}) => {
   return (
     <>
       <div className="col-md-6">
@@ -24,7 +24,7 @@ const Tareas = ({ tareas, cambiarEstado}) => {
                   <p className="card-text">
                     {descripcion} - Completada
                   </p>
-                  <button className="btn btn-danger">Eliminar</button>
+                  <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
                   <span> </span>
                   <button className="btn btn-warning">Editar</button>
                   
@@ -41,11 +41,11 @@ const Tareas = ({ tareas, cambiarEstado}) => {
                   <p className="card-text">
                     {descripcion} - Sin Completar
                   </p>
-                    <button className="btn btn-danger">Eliminar</button>
+                    <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
                     <span> </span>
                     <button className="btn btn-warning">Editar</button>
                     <span> </span>
-                    <button className="btn btn-success" onClick={e =>cambiarEstado(id)}>Completado</button>
+                    <button className="btn btn-success" onClick={e =>cambiarEstado(id, tareas, setTareas)}>Completar</button>
                 </div>
               </div>
             )
