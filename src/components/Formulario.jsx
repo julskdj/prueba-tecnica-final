@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import shortid from "shortid";
 
-const Formulario = ({ EstablecerTarea, modoEditando, setModoEditando }) => {
+const Formulario = ({
+  EstablecerTarea,
+  modoEditando,
+  setModoEditando,
+  tareas,
+}) => {
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [error, setError] = useState(false);
@@ -33,9 +38,28 @@ const Formulario = ({ EstablecerTarea, modoEditando, setModoEditando }) => {
     e.target.reset();
   };
 
+  const editarTareaForm = (e) => {
+    e.preventDefault();
+
+    if (descripcion.trim() === "") {
+      setError(true);
+      return;
+    }
+
+    setError(false);
+    const found = tareas.find((tarea) => tarea.id === modoEditando.id);
+    found.descripcion = descripcion;
+
+    setModoEditando(false);
+    setTitulo("");
+    setDescripcion("");
+    e.target.reset();
+    
+  };
+
   return (
     <>
-      {modoEditando ? (
+      {modoEditando.modoEditando == true ? (
         <div className="col-md-6">
           <br />
           <br />
@@ -48,7 +72,9 @@ const Formulario = ({ EstablecerTarea, modoEditando, setModoEditando }) => {
             </div>
           ) : null}
 
-          <form onSubmit={enviarFormulario} onReset={resetForm}>
+         
+
+          <form onSubmit={editarTareaForm} onReset={resetForm}>
             <div className="form-group">
               <label htmlFor="titulo">Favor ingrese un titulo</label>
               <input
@@ -58,6 +84,7 @@ const Formulario = ({ EstablecerTarea, modoEditando, setModoEditando }) => {
                 placeholder="Ingrese un titulo"
                 onChange={(e) => setTitulo(e.target.value)}
                 value={titulo}
+                disabled
               />
               <label htmlFor="descripcion">Favor ingrese una descripcion</label>
               <textarea
@@ -116,10 +143,10 @@ const Formulario = ({ EstablecerTarea, modoEditando, setModoEditando }) => {
               ></textarea>
               <br />
               <button type="submit" className="btn btn-primary">
-                Agregar Tarea{" "}
+                Agregar Tarea
               </button>
-                <span> </span>
-                <button type="reset" className="btn btn-secondary">
+              <span> </span>
+              <button type="reset" className="btn btn-secondary">
                 Reinicar Formulario
               </button>
             </div>

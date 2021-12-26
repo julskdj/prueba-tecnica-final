@@ -22,6 +22,7 @@ const Index = ({
             EstablecerTarea={EstablecerTarea}
             modoEditando={modoEditando}
             setModoEditando={setModoEditando}
+            tareas={tareas}
           />
           <Tareas
             tareas={tareas}

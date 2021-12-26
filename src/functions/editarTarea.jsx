@@ -1,7 +1,11 @@
-const editarTarea = (id, setModoEditando) => {
+const editarTarea = (id, setModoEditando, descripcion) => {
     console.log(id)
-
-    setModoEditando(true);
+    setModoEditando(
+        {
+            id,
+            modoEditando: true,
+        }
+    );
 }
 
 export default editarTarea

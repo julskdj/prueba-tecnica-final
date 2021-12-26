@@ -70,7 +70,7 @@ const Navbar = ({ setTareas, tareasBusqueda }) => {
               className="form-control me-2"
               type="search"
               aria-label="Search"
-              placeholder="Busqueda por Nombre o Empresa"
+              placeholder="Busqueda por titulo o descripcion"
               onChange={handleChange}
             />
             <button className="btn btn-outline-success" type="submit">

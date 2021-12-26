@@ -27,7 +27,7 @@ const Tareas = ({ tareas, setTareas, tareasBusqueda, settareasBusqueda, setModoE
                   <p className="card-text">
                     {descripcion} - Completada
                   </p>
-                  <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
+                  <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda, setModoEditando)} >Eliminar</button>
                   <span> </span>
                   <button className="btn btn-warning" onClick={e => editarTarea(id, setModoEditando)}>Editar</button>
                   
@@ -44,7 +44,7 @@ const Tareas = ({ tareas, setTareas, tareasBusqueda, settareasBusqueda, setModoE
                   <p className="card-text">
                     {descripcion} - Sin Completar
                   </p>
-                    <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda)} >Eliminar</button>
+                    <button className="btn btn-danger" onClick={e=> eliminarTarea(id, setTareas, tareas, tareasBusqueda, settareasBusqueda, setModoEditando)} >Eliminar</button>
                     <span> </span>
                     <button className="btn btn-warning" onClick={e => editarTarea(id, setModoEditando)} >Editar</button>
                     <span> </span>
