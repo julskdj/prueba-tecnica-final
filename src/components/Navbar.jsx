@@ -1,29 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import filtrar from "../functions/filtrar";
 
 const Navbar = ({ setTareas, tareasBusqueda }) => {
 
     const handleChange = (e) => {
-        filtrar(e.target.value);
+        filtrar(e.target.value, setTareas, tareasBusqueda);
     }
 
-    const filtrar = (termino) => {
-        var resultado = tareasBusqueda.filter((elemento) => {
-          if (
-            elemento.titulo
-              .toString()
-              .toLowerCase()
-              .includes(termino.toLowerCase()) ||
-            elemento.descripcion
-              .toString()
-              .toLowerCase()
-              .includes(termino.toLowerCase())
-          ) {
-            return elemento;
-          }
-        });
-        setTareas(resultado);
-      };
 
   return (
     <>

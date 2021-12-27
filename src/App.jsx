@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import Index from "./routes/Index";
 
-
 function App() {
   const [tareas, setTareas] = useState([]);
   const [tareasBusqueda, settareasBusqueda] = useState([]);
@@ -16,10 +15,6 @@ function App() {
     settareasBusqueda([...tareasBusqueda, task]);
     console.log(task);
   };
-
-  
-
-  
 
   return (
     <>

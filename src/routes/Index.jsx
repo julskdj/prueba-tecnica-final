@@ -14,7 +14,10 @@ const Index = ({
 }) => {
   return (
     <>
-      <Navbar setTareas={setTareas} tareasBusqueda={tareasBusqueda} />
+      <Navbar
+        setTareas={setTareas}
+        tareasBusqueda={tareasBusqueda}
+      />
 
       <div className="container">
         <div className="row">
@@ -23,6 +26,9 @@ const Index = ({
             modoEditando={modoEditando}
             setModoEditando={setModoEditando}
             tareas={tareas}
+            settareasBusqueda={settareasBusqueda}
+            setTareas={setTareas}
+            tareasBusqueda={tareasBusqueda}
           />
           <Tareas
             tareas={tareas}
