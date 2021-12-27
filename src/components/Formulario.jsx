@@ -77,17 +77,14 @@ const Formulario = ({
       e.target.reset();
     } else {
       setErrorGatos({ vacio: false, numero: false });
-      console.log(numero);
-      peticion(numero);
 
-      const arreglo = JSON.parse(localStorage.getItem("tareas"));
+      const arreglo = await peticion(numero);
+
       setTareas([...tareas, ...arreglo]);
       settareasBusqueda([...tareasBusqueda, ...arreglo]);
-      
-      localStorage.removeItem("tareas");
+
       setNumero("");
       e.target.reset();
-      
     }
   };
 

@@ -1,25 +1,22 @@
 import shortid from "shortid";
 
-const peticion = (numero) => {
-  fetch(`https://catfact.ninja/facts?limit=${numero}`)
-    .then((response) => response.json())
-    .then((data) => {
-        let arreglo = [];
+const peticion = async (numero) => {
+  const res = await fetch(`https://catfact.ninja/facts?limit=${numero}`);
+  const data = await res.json();
 
-        data.data.forEach((element) => {
-          const gato = {
-            id: shortid.generate(),
-            descripcion: element.fact,
-            completado: false,
-            titulo: "",
-          };
-          arreglo.push(gato);
-        });
+  let arreglo = [];
 
-        localStorage.setItem("tareas", JSON.stringify(arreglo));
-    })
-    .catch((error) => console.log(error));
+  data.data.forEach((element) => {
+    const gato = {
+      id: shortid.generate(),
+      descripcion: element.fact,
+      completado: false,
+      titulo: "",
+    };
+    arreglo.push(gato);
+  });
 
+  return arreglo;
 };
 
 export default peticion;
