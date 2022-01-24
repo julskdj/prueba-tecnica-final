@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import peticion from "../functions/peticion";
+import shortid from "shortid";
 
 const Formulario = ({
   EstablecerTarea,
